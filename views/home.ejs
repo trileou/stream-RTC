@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Web RTC</title>
+    </head>
+    <body>
+        <h1>Web RTC trainning</h1>
+        <video id="localStream" width="300" controls></video>
+
+    </body>
+    <script>
+        // Prefer camera resolution nearest to 1280x720.
+        var constraints = { audio: true, video: { width: 1280, height: 720 } }; 
+        navigator.mediaDevices.getUserMedia(constraints)
+        .then(stream => console.log(stream)) //after get user media
+        .catch(err => console.log(err)); 
+    </script>
+</html>
